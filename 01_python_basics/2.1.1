@@ -1,0 +1,49 @@
+# write the code..
+# Menu-driven program to manage a list of integers
+
+lst = []
+
+while True:
+    print("1. Add")
+    print("2. Remove")
+    print("3. Display")
+    print("4. Quit")
+    
+    choice = input("Enter choice: ")
+    
+    # ADD
+    if choice == '1':
+        try:
+            num = int(input("Integer: "))
+            lst.append(num)
+            print("List after adding:", lst)
+        except:
+            print("Invalid input")
+    
+    # REMOVE
+    elif choice == '2':
+        if not lst:
+            print("List is empty")
+        else:
+            try:
+                num = int(input("Integer: "))
+                if num in lst:
+                    lst.remove(num)
+                    print("List after removing:", lst)
+                else:
+                    print("Element not found")
+            except:
+                print("Invalid input")
+
+    elif choice == '3':
+        if not lst:
+            print("List is empty")
+        else:
+            print(lst)
+
+    elif choice == '4':
+        break
+    
+    # INVALID CHOICE
+    else:
+        print("Invalid choice")
